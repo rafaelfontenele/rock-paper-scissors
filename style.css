@@ -1,0 +1,17 @@
+
+
+body {
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+    background-color: #725e4a
+
+}
+
+.btn-startgame {
+
+    background-color: rgba(150, 150, 150, 0.5);
+    padding: 15px;
+    border: 10px black;
+    
+}
