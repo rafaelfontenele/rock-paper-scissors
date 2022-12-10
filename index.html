@@ -9,8 +9,13 @@
 </head>
 <body>
 
-
-    <button class="btn-startgame" onclick="startGame()">CLICK ME</button>
+    <div class="gameDisplay">GAME</div>
+    <div class="playerMoveDisplay">PLAYERMOVE</div>
+    <div class="btn-row">
+        <button class="playRock" onclick="playerMove('rock')">ROCK</button>
+        <button class="playPaper" onclick="playerMove('paper')">Paper</button>
+        <button class="playScissors" onclick="playerMove('scissors')">Scissors</button>
+    </div>
     <script src="script.js"></script>    
     
 </body>

@@ -2,10 +2,19 @@
 
 body {
     display: flex;
-    justify-content: center;
-    padding-top: 20%;
-    background-color: #725e4a
+    justify-content: space-around;
+    gap: 200px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 255, 0.4)
 
+}
+.gameDisplay {
+    padding-top: 20%;
+    display: block;
+    width: 300px;
+    height: auto;
+    border: 20px black;
 }
 
 .btn-startgame {
@@ -14,4 +23,20 @@ body {
     padding: 15px;
     border: 10px black;
     
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn-row button {
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
 }
