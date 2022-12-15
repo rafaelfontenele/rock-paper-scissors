@@ -8,15 +8,41 @@
     <title>Rock paper scissors</title>
 </head>
 <body>
+    <div class="dealerMoveDisplay">????</div>
+    <div class="gameDisplay">
+        <div class="winCountText">YOU: <div class="winCount">0</div></div>
+        <div class="joKenPo"><div class="jo">JO</div><div class="ken">KEN</div><div class="po">PO!</div></div>
+        <div class="gameDisplayMidText">Pick something!
 
-    <div class="gameDisplay">GAME</div>
-    <div class="playerMoveDisplay">PLAYERMOVE</div>
+        </div>
+        <div class="loseCountText">PC: <div class="loseCount">0</div></div>
+    </div>
+    <div class="playerMoveDisplay">????</div>
     <div class="btn-row">
-        <button class="playRock" onclick="playerMove('rock')">ROCK</button>
-        <button class="playPaper" onclick="playerMove('paper')">Paper</button>
-        <button class="playScissors" onclick="playerMove('scissors')">Scissors</button>
+        <div class="card">
+            <button class="playRock-btn" onclick="doMatch('rock')   ">
+                <img src="/images/rock.png" class="playRock-image" alt="Rock">
+                Rock
+            </button>
+        </div>
+        <div class="card">
+            <button class="playPaper-btn" onclick="doMatch('paper')">
+                <img src="/images/paper.png" class="playPaper-image" alt="Paper">
+                Paper
+            </button>
+        </div>
+        <div class="card">
+            <button class="playScissors-btn" onclick="doMatch('scissors')">
+                <img src="/images/scissors.png" class="playScissors-image" alt="Rock">
+                Scissors
+            </button>
+        </div>
+        <button class="resetButton" onclick="resetGame()">
+            <img src="./images/restart.jpg" class="reset-image" alt="RestartButton">
+        </button>
     </div>
     <script src="script.js"></script>    
+
     
 </body>
 </html>

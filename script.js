@@ -1,6 +1,39 @@
 
 let possibleMoves = ['rock', 'paper', 'scissors']
+let canMakePlay = 1;
+const PCWinCount = document.querySelector('.loseCount');
+const winCount = document.querySelector('.winCount');
 
+
+function openUrl(url) {
+    window.open(url, '_blank').focus();
+  }
+
+
+function setWinCount(number) {
+    winCount.innerHTML = number;
+}
+
+function setPCWinCount(number) {
+    PCWinCount.innerHTML = number;
+}
+
+function increaseWinCount(number) {
+    winCount.innerHTML = +winCount.innerHTML + number;
+}
+
+function increasePCWinCount(number) {
+    PCWinCount.innerHTML = +PCWinCount.innerHTML + number;
+}
+
+function resetGame() {
+    if (canMakePlay === 1) {
+        setGameDisplay('Game resetted!');
+        setWinCount(0);
+        setPCWinCount(0);
+
+    }
+}
 
 function isPossible(move) {
      if (possibleMoves.indexOf(move) === -1) {
@@ -58,6 +91,13 @@ returns: -1 == something went wrong(invalid move)
     return result;
 }
 
+function sleep(ms) {
+    initialTime = new Date().getTime();
+    while (new Date().getTime() < initialTime + ms) {
+
+    }
+
+}
 
 function makeRandomChoice() {
     return Math.floor(Math.random() * 3)
@@ -68,6 +108,64 @@ function randomMove() {
     return possibleMoves[makeRandomChoice()];
 }
 
-function playerMove(move) {
-    console.log(`Player played ${move}`)
+function setPlayerText(text) {
+    const display = document.
+                    querySelector('.playerMoveDisplay');
+    display.innerHTML = text;
 }
+
+function setGameDisplay(text) {
+    const display = document.querySelector('.gameDisplayMidText');
+    display.innerHTML = text;
+}
+
+function setPCText(text) {
+    const display = document.
+                    querySelector('.dealerMoveDisplay');
+    display.innerHTML = text;
+}
+
+
+function doMatch(playerMove) {
+    if (canMakePlay === 1) {
+        canMakePlay = 0;
+        pcMove = randomMove();
+        setPCText(`PC played ${pcMove}`);
+        setPlayerText(`You played ${playerMove}`);
+        let result = battleResult(playerMove, pcMove);
+
+        if (result == 1) {
+            setGameDisplay('You WON!');
+            increaseWinCount(1);
+        } else if (result === 2) {
+            setGameDisplay('You LOST!');
+            increasePCWinCount(1);
+        } else if (result === 0) {
+            setGameDisplay('Its a DRAW!');
+        } else {
+            setGameDisplay('Somethig wrong happened...');
+        }
+
+    }
+
+
+
+        canMakePlay = 1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+joKenPo = document.querySelector('.JoKenPo');
+
+joKenPo.style.visibility = 'hidden';
+
+
+
