@@ -1,4 +1,7 @@
 
+LIVE: https://etzoider.github.io/rock-paper-scissors/
+
+
 
 (Read this text RAW-mode) Rock paper scissors game for the (theodinproject.com) course.
 
